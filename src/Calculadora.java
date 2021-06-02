@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class Calculadora {
 
+	
+	public static double resultado=0;
+	
+	
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner(System.in);
 		double valor1 = 0, valor2=0;
@@ -9,14 +13,7 @@ public class Calculadora {
 		int opcao = 0;
 		
 		while (opcao!=6) {
-			System.out.println("PROGRAMA CALCULADORA");
-			System.out.println("Escolha sua opção!");
-			System.out.println("1 - Digitar valores");
-			System.out.println("2 - Realizar soma");
-			System.out.println("3 - Realizar subtração");
-			System.out.println("4 - Realizar divisão");
-			System.out.println("5 - Realizar multiplicação");
-			System.out.println("6 - Sair");
+			exibirMenu();
 			opcao = leitor.nextInt();
 			
 			switch(opcao) {
@@ -31,24 +28,24 @@ public class Calculadora {
 				break;
 			case 2:
 				System.out.println("\n\nRealizando a soma entre " + valor1 + " e " + valor2);
-				soma = valor1 + valor2;
-				System.out.println("O resultado foi " + soma + "!\n\n");
+				resultado = valor1 + valor2;
+				System.out.println("O resultado foi " + resultado + "!\n\n");
 				
 				break;
 			case 3:
 				System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
-				subtracao = valor1 - valor2;
-				System.out.println("O resultado foi " + subtracao + "!\n\n");
+				resultado = valor1 - valor2;
+				System.out.println("O resultado foi " + resultado + "!\n\n");
 				break;
 			case 4:
 				System.out.println("\n\nRealizando a divisão entre " + valor1 + " e " + valor2);
-				divisao = valor1 / valor2;
-				System.out.println("O resultado foi " + divisao + "!\n\n");
+				resultado = valor1 / valor2;
+				System.out.println("O resultado foi " + resultado + "!\n\n");
 				break;
 			case 5:
 				System.out.println("\n\nRealizando a multiplicação entre " + valor1 + " e " + valor2);
-				multiplicacao = valor1 * valor2;
-				System.out.println("O resultado foi " + multiplicacao + "!\n\n");
+				resultado = valor1 * valor2;
+				System.out.println("O resultado foi " + resultado + "!\n\n");
 				break;
 			case 6:
 				System.out.println("Saindo do sistema");
@@ -61,4 +58,24 @@ public class Calculadora {
 
 	}
 
+	
+	//modificador static tipoRetorno nomeMetodo(){}
+	
+	
+	public static void exibirMenu() {
+		System.out.println("PROGRAMA CALCULADORA");
+		System.out.println("Escolha sua opção!");
+		System.out.println("1 - Digitar valores");
+		System.out.println("2 - Realizar soma");
+		System.out.println("3 - Realizar subtração");
+		System.out.println("4 - Realizar divisão");
+		System.out.println("5 - Realizar multiplicação");
+		System.out.println("6 - Sair");
+	}
+	
+	public static void imprimirResultado() {
+		System.out.println("O resultado é " + resultado + "!\n\n");
+	}
+	
+	
 }
