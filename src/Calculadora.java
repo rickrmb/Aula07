@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Calculadora {
 
 	
-	public static double resultado=0;
+
 	
 	
 	public static void main(String[] args) {
@@ -28,24 +28,24 @@ public class Calculadora {
 				break;
 			case 2:
 				System.out.println("\n\nRealizando a soma entre " + valor1 + " e " + valor2);
-				resultado = valor1 + valor2;
-				System.out.println("O resultado foi " + resultado + "!\n\n");
+				double resultadoSoma = valor1 + valor2;
+				imprimirResultado(resultadoSoma);
 				
 				break;
 			case 3:
 				System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
-				resultado = valor1 - valor2;
-				System.out.println("O resultado foi " + resultado + "!\n\n");
+				double resultadoSubtracao = valor1 - valor2;
+				imprimirResultado(resultadoSubtracao);
 				break;
 			case 4:
 				System.out.println("\n\nRealizando a divisão entre " + valor1 + " e " + valor2);
-				resultado = valor1 / valor2;
-				System.out.println("O resultado foi " + resultado + "!\n\n");
+				double resultadoDivisao = valor1 / valor2;
+				imprimirResultado(resultadoDivisao);
 				break;
 			case 5:
 				System.out.println("\n\nRealizando a multiplicação entre " + valor1 + " e " + valor2);
-				resultado = valor1 * valor2;
-				System.out.println("O resultado foi " + resultado + "!\n\n");
+				double resultadoMultiplicacao = valor1 * valor2;
+				imprimirResultado(resultadoMultiplicacao);
 				break;
 			case 6:
 				System.out.println("Saindo do sistema");
@@ -73,8 +73,13 @@ public class Calculadora {
 		System.out.println("6 - Sair");
 	}
 	
-	public static void imprimirResultado() {
-		System.out.println("O resultado é " + resultado + "!\n\n");
+	
+	public static void imprimirResultado(double valorResultado) {
+		if( valorResultado > 0) {
+		System.out.println("O resultado é " + valorResultado + "!\n\n");
+		}else {
+			System.out.println("Erro! Não foi possível efetuar o calculo");
+		}
 	}
 	
 	
